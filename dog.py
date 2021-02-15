@@ -1,7 +1,8 @@
 class Dog:
-    def __init__(self, name):
+    def __init__(self, name, breed):
         self.name = name
-        print("dog initialized")
+        self.breed = breed
+        print("dog initialized!")
 
-
-Dog('Rex')
+    def bark(self):
+        print('woof!')
