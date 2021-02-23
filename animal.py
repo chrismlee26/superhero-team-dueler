@@ -1,17 +1,20 @@
 class Animal:
-    def __init__(self, name, sleep_time):
+    def __init__(self, name):
         self.name = name
-        self.sleep_time = sleep_time
 
-    def sleep(self):
-        print("{} sleeps for {} hours".format(self.name, self.sleep_time))
+    def eat(self):
+        print("{} is eating".format(self.name))
 
-
-class Dog(Animal):
-    def bark(self):
-        print('woof!')
+    def drink(self):
+        print("{} is drinking".format(self.name))
 
 
-my_dog = Dog("bob", 18)
-my_dog.sleep()
-my_dog.bark()
+class Frog(Animal):
+    def jump(self):
+        print("{} is jumping".format(self.name))
+
+
+my_frog = Frog('Fred')
+my_frog.eat()
+my_frog.drink()
+my_frog.jump()
