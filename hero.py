@@ -43,26 +43,28 @@ class Hero:
             return False
 
     def fight(self, opponent):
-        # TODO: Fight each hero until a victor emerges.
-        # Phases to implement:
         # 0) check if at least one hero has abilities. If no hero has abilities, print "Draw"
+        # create variables to hold abilities.length
         hero_abilities = len(self.abilities)
         hero2_abilities = len(opponent.abilities)
+        # force int on abilties lists and check if greater than zero
         if int(hero_abilities) <= 0 or int(hero2_abilities) <= 0:
             print("Draw")
         # 1) else, start the fighting loop until a hero has won
         else:
+            # loop as long as heros are not dead
             while self.current_health > 0 and opponent.current_health > 0:
                 # 2) the hero (self) and their opponent must attack each other and each must take damage from the other's attack
+                # 3) After each attack, check if either the hero (self) or the opponent is alive
                 opponent.take_damage(self.attack())
                 self.take_damage(opponent.attack())
+                # 4) if one of them has died, print "HeroName won!" replacing HeroName with the name of the hero, and end the fight loop
+                # if hero1 is alive then print
                 if self.is_alive() == True:
                     print(f'${self.name} won!')
                 else:
+                    # if opponent is alive then print
                     print(f'${opponent.name} won!')
-
-        # 3) After each attack, check if either the hero (self) or the opponent is alive
-        # 4) if one of them has died, print "HeroName won!" replacing HeroName with the name of the hero, and end the fight loop
 
 # ----------- TESTING / PRINT STATEMENTS BELOW --------------------
 # Fight Test
@@ -104,9 +106,6 @@ class Hero:
 
 
 if __name__ == "__main__":
-    # If you run this file from the terminal
-    # this block is executed.
-
     hero1 = Hero("Wonder Woman")
     hero2 = Hero("Dumbledore")
     ability1 = Ability("Super Speed", 300)
