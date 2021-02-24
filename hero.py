@@ -11,8 +11,19 @@ class Hero:
         self.current_health = starting_health
         self.abilities = list()
         self.armors = list()
+        self.kills = 0
+        self.deaths = 0
+
+    def add_kill(self, sum_kills):
+        # update self kills by num_kills amount
+        self.kills += sum_kills
+
+    def add_death(self, sum_deaths):
+        # update self deaths by num_deaths amount
+        self.deaths += sum_deaths
 
     def add_weapon(self, weapon):
+        # adds a weapon into the abilities list object
         self.abilities.append(weapon)
 
     def add_ability(self, ability):
@@ -66,9 +77,14 @@ class Hero:
                 # if hero1 is alive then print
                 if self.is_alive() == True:
                     print(f'${self.name} won!')
+                    self.add_kill += 1
+                    opponent.add_death += 1
+
                 else:
                     # if opponent is alive then print
                     print(f'${opponent.name} won!')
+                    opponent.add_kill += 1
+                    self.add_death += 1
 
 # ----------- TESTING / PRINT STATEMENTS BELOW --------------------
 # Fight Test
