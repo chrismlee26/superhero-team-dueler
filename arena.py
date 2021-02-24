@@ -7,13 +7,9 @@ from team import Team
 
 class Arena:
     def __init__(self):
-        '''Instantiate properties
-            team_one: None
-            team_two: None
-        '''
         # instance variables named team_one and team_two hold teams.
-        self.team_one = list()
-        self.team_two = list()
+        self.team_one = Team("One")
+        self.team_two = Team("Two")
 
     def create_ability(self):
         # prompts for the info to make an ability + max_damage
@@ -96,8 +92,8 @@ class Arena:
 
     def show_stats(self):
         '''Prints team statistics to terminal.'''
-        self.alive_heroes = 0
-        self.dead_heroes = 0
+        # self.alive_heroes = 0
+        # self.dead_heroes = 0
 
         print("\n")
         print(self.team_one.name + " statistics: ")
@@ -108,15 +104,15 @@ class Arena:
         print("\n")
 
         # Team 1 Stats
-        team_kills = 0
-        team_deaths = 0
+        team1_kills = 0
+        team1_deaths = 0
         for hero in self.team_one.heroes:
-            team_kills += hero.kills
-            team_deaths += hero.deaths
-        if team_deaths == 0:
-            team_deaths = 1
+            team1_kills += hero.kills
+            team1_deaths += hero.deaths
+        if team1_deaths == 0:
+            team1_deaths = 1
             print(self.team_one.name + " average K/D was: " +
-                  str(team_kills/team_deaths))
+                  str(team1_kills/team1_deaths))
 
         # Team 2 Stats
         team2_kills = 0
