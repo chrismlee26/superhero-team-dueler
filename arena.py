@@ -30,8 +30,7 @@ class Arena:
         return Armor(name, max_block)
 
     def create_hero(self):
-        '''Prompt user for Hero information
-          return Hero with values from user input.
+        '''input from user and prompt return.
         '''
         hero_name = input("Hero's name: ")
         hero = Hero(hero_name)
@@ -57,7 +56,7 @@ class Arena:
         '''Prompt the user to build team_one '''
         numOfTeamMembers = int(
             input("How many members would you like on Team One?\n"))
-        for i in range(numOfTeamMembers):
+        for _ in range(numOfTeamMembers):
             # call self.create_hero() for every hero that the user wants to add to team one.
             hero = self.create_hero()
             # Add the created hero to team one.
@@ -67,7 +66,7 @@ class Arena:
         '''Prompt the user to build team_two'''
         numOfTeamMembers = int(
             input("How many members would you like on Team Two?\n"))
-        for i in range(numOfTeamMembers):
+        for _ in range(numOfTeamMembers):
             # call self.create_hero() for every hero that the user wants to add to team one.
             hero = self.create_hero()
             # Add the created hero to team one.

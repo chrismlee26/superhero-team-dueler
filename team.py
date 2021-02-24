@@ -27,7 +27,7 @@ class Team:
         '''Prints out all heroes to the console.'''
         # Loop over the list of heroes and print their names to the terminal one by one.
         for hero in self.heroes:
-            print(hero)
+            print(hero.name)
 
     def stats(self):
         '''Print team statistics'''
